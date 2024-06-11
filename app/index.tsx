@@ -6,7 +6,7 @@ const Stack = createStackNavigator();
 const index = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={Form} />
+      <Stack.Screen name="Form" component={Form} />
     </Stack.Navigator>
   );
 };
