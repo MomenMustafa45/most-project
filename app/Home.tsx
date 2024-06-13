@@ -1,58 +1,56 @@
-import { View, Text } from "react-native";
-import { CircleStackIcon, UserCircleIcon } from "react-native-heroicons/mini";
-import { LinearGradient } from "expo-linear-gradient";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+} from "react-native";
 
 import React from "react";
+import OfferCard from "@/components/OfferCard";
+import ProfileCard from "@/components/ProfileCard";
+import SectionTitle from "@/components/SectionTitle";
+import GameCard from "@/components/GameCard";
+import gameImgOne from "../assets/images/HomeGameOne.png";
+import gameImgTwo from "../assets/images/homeGameTwo.png";
+import gameImgThree from "../assets/images/homeGameThree.png";
+import gameImgFour from "../assets/images/homeGameFour.png";
 
 let arrOfCards = [
-  { image: "", price: 5, title: "Sirius XM" },
-  { image: "", price: 5, title: "Sirius XM" },
-  { image: "", price: 5, title: "Sirius XM" },
-  { image: "", price: 5, title: "Sirius XM" },
+  { id: 1, image: gameImgOne, price: 5, title: "Sirius XM" },
+  { id: 2, image: gameImgTwo, price: 5, title: "Sirius XM" },
+  { id: 3, image: gameImgThree, price: 5, title: "Sirius XM" },
+  { id: 4, image: gameImgFour, price: 5, title: "Sirius XM" },
 ];
 
 const Home = () => {
   return (
     <View className="flex-1 bg-[#4E08D7]">
       {/* Profile details */}
-      <View className="w-full h-[100px] bg-slate-500 py-3 px-4 justify-between">
-        {/* box */}
-        <View className="flex-row items-center justify-between">
-          <View className="flex-row items-center">
-            <View className="flex-row items-center bg-black mr-4 rounded px-3 py-1">
-              <CircleStackIcon color={"yellow"} size={15} />
-              <Text className="text-white text-xs ml-1">4000</Text>
-            </View>
-            <View>
-              <Text className="text-white text-xs">Let's start earning</Text>
-            </View>
-          </View>
+      <ProfileCard />
 
-          <View>
-            <UserCircleIcon color={"white"} size={30} />
+      <ScrollView>
+        {/* box adding */}
+        <OfferCard />
+
+        {/* section title */}
+        <SectionTitle />
+
+        {/* home cards */}
+        {arrOfCards.map((e) => (
+          <View key={e.id}>
+            <GameCard />
           </View>
-        </View>
-        {/* box */}
-        <View className="flex-row items-center">
-          <View className="w-2/3 bg-yellow-500 flex-row items-center justify-center relative rounded-xl overflow-hidden">
-            <LinearGradient
-              end={{ x: 0.7, y: 0.1 }}
-              // Background Linear Gradient
-              colors={["#FA6400", "#FFB703"]}
-              className="absolute top-0 right-0 left-0 h-full"
-            />
-            <CircleStackIcon
-              color={"yellow"}
-              size={15}
-              style={{ position: "absolute", left: 5 }}
-            />
-            <Text className="font-bold">4,000/0</Text>
-          </View>
-          <Text className="text-xs ml-2 text-white font-bold">
-            Next Payout $0.00
-          </Text>
-        </View>
-      </View>
+        ))}
+      </ScrollView>
+
+      {/* <View className="flex-1">
+        <FlatList
+          data={arrOfCards}
+          renderItem={({ item }) => <GameCard />}
+          keyExtractor={(item) => item.id.toString()}
+        />
+      </View> */}
     </View>
   );
 };
