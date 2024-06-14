@@ -4,14 +4,17 @@ import {
   ChevronRightIcon,
   CurrencyDollarIcon,
 } from "react-native-heroicons/mini";
+import ButtonAnimation from "./ButtonAnimation";
+interface CardProps {
+  image: string | any;
+  price: number;
+  title: string;
+}
 
-const GameCard = () => {
+const GameCard = ({ image, price, title }: CardProps) => {
   return (
     <View className="w-[85%] mx-auto bg-[#C514B0] p-2 rounded-2xl my-2 shadow-lg">
-      <Image
-        source={require("../assets/images/HomeGameOne.png")}
-        className="w-full rounded-md"
-      />
+      <Image source={image} className="w-full rounded-md" />
       {/*  */}
       <View className="flex-row items-center justify-between pr-20 my-4">
         <View>
@@ -19,16 +22,14 @@ const GameCard = () => {
 
           <View className="flex-row items-center">
             <CurrencyDollarIcon color={"yellow"} />
-            <Text className="ml-2 text-white font-bold">$5.00</Text>
+            <Text className="ml-2 text-white font-bold">${price}</Text>
           </View>
         </View>
-        <Text className="text-white font-bold">Sirius XM</Text>
+        <Text className="text-white font-bold">{title}</Text>
       </View>
       {/*  */}
-      <TouchableOpacity className="flex-row justify-center w-3/4 mx-auto bg-[#FFEE1A] py-2 rounded-md my-2">
-        <ChevronRightIcon color={"black"} />
-        <Text className="font-bold">Start Playing</Text>
-      </TouchableOpacity>
+
+      <ButtonAnimation />
     </View>
   );
 };
