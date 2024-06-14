@@ -3,11 +3,12 @@ import {
   StackNavigationProp,
   createStackNavigator,
 } from "@react-navigation/stack";
-
-import BottomNavigation from "@/Navigations/BottomNavigation";
+import Form from "@/app/Form";
+const Stack = createStackNavigator();
 
 type RootStackParamList = {
   Home: undefined;
+  Root: undefined;
   // Add other screens here if needed
   // Login: undefined;
   // Register: undefined;
@@ -18,12 +19,12 @@ export type HomeScreenNavigationProp = StackNavigationProp<
   "Home"
 >;
 
-const index = () => {
+const StackNavigation = () => {
   return (
-    <>
-      <BottomNavigation />
-    </>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Form" component={Form} />
+    </Stack.Navigator>
   );
 };
 
-export default index;
+export default StackNavigation;

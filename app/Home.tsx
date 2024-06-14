@@ -29,7 +29,7 @@ const Home = () => {
       {/* Profile details */}
       <ProfileCard />
 
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ paddingBottom: 60 }}>
         {/* box adding */}
         <OfferCard />
 
@@ -39,7 +39,7 @@ const Home = () => {
         {/* home cards */}
         {arrOfCards.map((e) => (
           <View key={e.id}>
-            <GameCard />
+            <GameCard image={e.image} title={e.title} price={e.price} />
           </View>
         ))}
       </ScrollView>

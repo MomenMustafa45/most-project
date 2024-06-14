@@ -1,9 +1,11 @@
 import { View, Image } from "react-native";
 import React from "react";
 
+export type MarqueeDirection = "up" | "left" | "right" | "down";
+
 import { Marquee } from "@animatereactnative/marquee";
 interface SlideInfiniteProps {
-  direction: string; // Assuming direction is a string
+  direction: MarqueeDirection; // Match the MarqueeDirection type
 }
 
 const SlideInfinite = ({ direction = "right" }: SlideInfiniteProps) => {
