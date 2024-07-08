@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "most-project",
-    "slug": "most-project",
+    "slug": "playtoearn",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "red"
+      "backgroundColor": "#eee"
     },
     "ios": {
       "supportsTablet": true
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "playandearn.com"
     },
     "web": {
       "bundler": "metro",
@@ -29,6 +30,15 @@
     "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8ac44742-33d1-4507-8de2-3eabbc4695aa"
+      }
+    },
+    "owner": "momenmustafa"
   }
 }
