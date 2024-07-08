@@ -14,7 +14,7 @@ import GameCard from "@/components/GameCard";
 import gameImgOne from "../assets/images/HomeGameOne.png";
 import gameImgTwo from "../assets/images/homeGameTwo.png";
 import gameImgThree from "../assets/images/homeGameThree.png";
-import gameImgFour from "../assets/images/homeGameFour.png";
+import gameImgFour from "../assets/images/homeGameThree.png";
 
 let arrOfCards = [
   { id: 1, image: gameImgOne, price: 5, title: "Sirius XM" },
