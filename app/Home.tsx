@@ -17,10 +17,10 @@ import gameImgThree from "../assets/images/homeGameThree.png";
 import gameImgFour from "../assets/images/homeGameThree.png";
 
 let arrOfCards = [
-  { id: 1, image: gameImgOne, price: 5, title: "Sirius XM" },
-  { id: 2, image: gameImgTwo, price: 5, title: "Sirius XM" },
-  { id: 3, image: gameImgThree, price: 5, title: "Sirius XM" },
-  { id: 4, image: gameImgFour, price: 5, title: "Sirius XM" },
+  { id: 1, price: 5, title: "Sirius XM" },
+  { id: 2, price: 5, title: "Sirius XM" },
+  { id: 3, price: 5, title: "Sirius XM" },
+  { id: 4, price: 5, title: "Sirius XM" },
 ];
 
 const Home = () => {
@@ -39,7 +39,7 @@ const Home = () => {
         {/* home cards */}
         {arrOfCards.map((e) => (
           <View key={e.id}>
-            <GameCard image={e.image} title={e.title} price={e.price} />
+            <GameCard title={e.title} price={e.price} />
           </View>
         ))}
       </ScrollView>
