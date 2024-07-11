@@ -2,8 +2,14 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { CircleStackIcon, UserCircleIcon } from "react-native-heroicons/mini";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+
+type RootStackParamList = {
+  profile: undefined; // Add other screens here if needed
+};
 
 const ProfileCard = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <View className="w-full h-[100px] bg-slate-500 py-3 px-4 justify-between">
       {/* box */}
@@ -18,7 +24,11 @@ const ProfileCard = () => {
           </View>
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("profile");
+          }}
+        >
           <UserCircleIcon color={"white"} size={30} />
         </TouchableOpacity>
       </View>
