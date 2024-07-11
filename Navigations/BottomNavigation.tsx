@@ -13,6 +13,8 @@ import {
   PuzzlePieceIcon,
 } from "react-native-heroicons/mini";
 import { StyleSheet } from "react-native";
+import ProfileCard from "@/components/ProfileCard";
+import Profile from "@/app/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +22,7 @@ const BottomNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={() => ({
-        headerShown: false,
+        header: () => <ProfileCard />,
         tabBarStyle: styles.tabBarContainer,
         tabBarItemStyle: styles.tabBarItem,
         tabBarActiveTintColor: "white",
@@ -32,6 +34,7 @@ const BottomNavigation = () => {
         name="StackNavigation"
         component={StackNavigation}
         options={() => ({
+          headerShown: false,
           tabBarStyle: {
             display: "none",
           },
@@ -75,6 +78,13 @@ const BottomNavigation = () => {
               color={focused.focused ? "white" : "#0071ff"}
             />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="profile"
+        component={Profile}
+        options={{
+          tabBarButton: () => null,
         }}
       />
     </Tab.Navigator>
