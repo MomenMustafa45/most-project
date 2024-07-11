@@ -1,39 +1,35 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import ButtonAnimation from "@/components/ButtonAnimation";
-// import notifee from "@notifee/react-native";
+import { CircleStackIcon } from "react-native-heroicons/mini";
 
 const Activity = () => {
-  // async function onDisplayNotification() {
-  //   // Request permissions (required for iOS)
-  //   await notifee.requestPermission();
-
-  //   // Create a channel (required for Android)
-  //   const channelId = await notifee.createChannel({
-  //     id: "default",
-  //     name: "Default Channel",
-  //   });
-
-  //   // Display a notification
-  //   await notifee.displayNotification({
-  //     title: "Notification Title",
-  //     body: "Main body content of the notification",
-  //     android: {
-  //       channelId,
-  //       smallIcon: "name-of-a-small-icon", // optional, defaults to 'ic_launcher'.
-  //       // pressAction is needed if you want the notification to open the app when pressed
-  //       pressAction: {
-  //         id: "default",
-  //       },
-  //     },
-  //   });
-  // }
-
   return (
-    <View className="justify-center items-center flex-1">
-      <TouchableOpacity>
-        <Text>Notify me</Text>
-      </TouchableOpacity>
+    <View className="justify-center items-center flex-1 bg-[#4E08D7] px-4">
+      <View className="py-5 w-full">
+        <Text className=" text-xl text-white font-bold">All activity</Text>
+      </View>
+      <View className="flex-1">
+        {/* activity card */}
+        <View className="flex flex-row items-center justify-between w-full  border-b-[1px] py-5 border-b-[#eee]">
+          <View>
+            <Text className="text-white text-sm">You earned</Text>
+            <View className="flex flex-row">
+              <View className="flex flex-row">
+                <CircleStackIcon color={"yellow"} size={15} />
+                <Text className="text-white font-bold">+4,000</Text>
+              </View>
+              <View>
+                <Text className="text-white">Playful Reward</Text>
+                <Text className="text-white text-xs">finish onboarding</Text>
+              </View>
+            </View>
+          </View>
+          {/* right side */}
+          <View>
+            <View className="w-5 h-5 bg-red-700 rounded-full"></View>
+          </View>
+        </View>
+      </View>
     </View>
   );
 };
